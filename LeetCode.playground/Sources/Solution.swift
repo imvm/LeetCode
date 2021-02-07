@@ -13,4 +13,16 @@ public class Solution {
 
         return result
     }
+
+    //https://leetcode.com/problems/check-if-n-and-its-double-exist/
+    func checkIfExist(_ arr: [Int]) -> Bool {
+        for i in 0..<arr.count {
+            for j in 0..<arr.count {
+                if i != j && arr[i] == arr[j] * 2 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }
