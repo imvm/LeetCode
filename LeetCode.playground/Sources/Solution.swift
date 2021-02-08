@@ -1,6 +1,11 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/flipping-an-image/
+    func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
+        return A.map({ $0.map({ abs(1 - $0) }).reversed() })
+    }
+
     // https://leetcode.com/problems/shuffle-the-array/
     public func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         guard n > 0 && nums.count == 2 * n else { fatalError("Invalid input!") }
