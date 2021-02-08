@@ -7,12 +7,12 @@ public class Solution {
     }
 
     // https://leetcode.com/problems/richest-customer-wealth/
-    func maximumWealth(_ accounts: [[Int]]) -> Int {
+    public func maximumWealth(_ accounts: [[Int]]) -> Int {
         return accounts.map({ $0.reduce(0, +) }).max()!
     }
 
     // https://leetcode.com/problems/flipping-an-image/
-    func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
+    public func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
         return A.map({ $0.map({ abs(1 - $0) }).reversed() })
     }
 
@@ -30,7 +30,7 @@ public class Solution {
     }
 
     //https://leetcode.com/problems/check-if-n-and-its-double-exist/
-    func checkIfExist(_ arr: [Int]) -> Bool {
+    public func checkIfExist(_ arr: [Int]) -> Bool {
         for i in 0..<arr.count {
             for j in 0..<arr.count {
                 if i != j && arr[i] == arr[j] * 2 {
