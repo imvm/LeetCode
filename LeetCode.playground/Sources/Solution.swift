@@ -1,6 +1,40 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/latest-time-by-replacing-hidden-digits/
+    public func maximumTime(_ time: String) -> String {
+        var h1 = time[time.index(time.startIndex, offsetBy: 0)]
+        var h2 = time[time.index(time.startIndex, offsetBy: 1)]
+        var m1 = time[time.index(time.startIndex, offsetBy: 3)]
+        var m2 = time[time.index(time.startIndex, offsetBy: 4)]
+
+        if h1 == "?" {
+            if h2 <= "3" || h2 == "?" {
+                h1 = "2"
+            } else {
+                h1 = "1"
+            }
+        }
+
+        if h2 == "?" {
+            if h1 == "1" || h1 == "0" {
+                h2 = "9"
+            } else {
+                h2 = "3"
+            }
+        }
+
+        if m1 == "?" {
+            m1 = "5"
+        }
+
+        if m2 == "?" {
+            m2 = "9"
+        }
+
+        return "\(h1)\(h2):\(m1)\(m2)"
+    }
+
     // https://leetcode.com/problems/defanging-an-ip-address/
     public func defangIPaddr(_ address: String) -> String {
         return address.replacingOccurrences(of: ".", with: "[.]")
