@@ -1,6 +1,11 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/defanging-an-ip-address/
+    public func defangIPaddr(_ address: String) -> String {
+        return address.replacingOccurrences(of: ".", with: "[.]")
+    }
+
     // https://leetcode.com/problems/richest-customer-wealth/
     func maximumWealth(_ accounts: [[Int]]) -> Int {
         return accounts.map({ $0.reduce(0, +) }).max()!
