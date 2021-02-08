@@ -1,6 +1,11 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/richest-customer-wealth/
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        return accounts.map({ $0.reduce(0, +) }).max()!
+    }
+
     // https://leetcode.com/problems/flipping-an-image/
     func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
         return A.map({ $0.map({ abs(1 - $0) }).reversed() })
