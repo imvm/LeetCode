@@ -1,6 +1,12 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/
+    public func kidsWithCandies(_ candies: [Int], _ extraCandies: Int) -> [Bool] {
+        let threshold = candies.max()! - extraCandies
+        return candies.map({ $0 >= threshold })
+    }
+
     // https://leetcode.com/problems/latest-time-by-replacing-hidden-digits/
     public func maximumTime(_ time: String) -> String {
         var h1 = time[time.index(time.startIndex, offsetBy: 0)]
