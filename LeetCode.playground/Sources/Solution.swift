@@ -1,6 +1,33 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/goal-parser-interpretation/submissions/
+    func interpret(_ command: String) -> String {
+        var result = ""
+        var firstParenIndex = -1
+        let indices = Array(command.indices)
+
+        var index = 0
+        while index < command.count {
+            if command[indices[index]] == "G" {
+                result.append("G")
+            } else if command[indices[index]] == "(" {
+                if command[indices[index + 1]] == ")" {
+                    result.append("o")
+                    index += 1
+                } else {
+                    firstParenIndex = index
+                }
+            } else if command[indices[index]] == ")" {
+                result.append(contentsOf: command[indices[firstParenIndex + 1]...indices[index - 1]])
+            }
+
+            index += 1
+        }
+
+        return result
+    }
+
     // https://leetcode.com/problems/number-of-good-pairs/submissions/
     func numIdenticalPairs(_ nums: [Int]) -> Int {
         var goodPairs = 0
