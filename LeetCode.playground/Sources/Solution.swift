@@ -1,6 +1,21 @@
 public class Solution {
     public init() {}
 
+    // https://leetcode.com/problems/number-of-good-pairs/submissions/
+    func numIdenticalPairs(_ nums: [Int]) -> Int {
+        var goodPairs = 0
+
+        for i in 0..<nums.count - 1 {
+            for j in (i + 1)..<nums.count {
+                if nums[i] == nums[j] {
+                    goodPairs += 1
+                }
+            }
+        }
+
+        return goodPairs
+    }
+
     // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/
     public func kidsWithCandies(_ candies: [Int], _ extraCandies: Int) -> [Bool] {
         let threshold = candies.max()! - extraCandies
