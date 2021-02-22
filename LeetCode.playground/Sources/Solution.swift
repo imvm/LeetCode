@@ -83,6 +83,13 @@ public class Solution {
         return "\(h1)\(h2):\(m1)\(m2)"
     }
 
+    // https://leetcode.com/problems/count-the-number-of-consistent-strings/submissions/
+    public func countConsistentStrings(_ allowed: String, _ words: [String]) -> Int {
+        return words
+            .filter { $0.allSatisfy(allowed.contains) }
+            .count
+    }
+
     // https://leetcode.com/problems/defanging-an-ip-address/
     public func defangIPaddr(_ address: String) -> String {
         return address.replacingOccurrences(of: ".", with: "[.]")
